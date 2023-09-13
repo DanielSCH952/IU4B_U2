@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="txtDividendo">Dividendo</label>
+      <input type="text" id="txtDividendo" />
+      <hr />
+      <label for="txtDivisor">Divisor</label>
+      <input type="text" id="txtDivisor" />
+      <hr />
+      <button id="btnDivision">Dividir</button>
+    </div>
+    <script>
+      const btn = document.getElementById("btnDivision");
+      btn.addEventListener("click", () => {
+        const divisor = document.getElementById("txtDivisor").value;
+        const dividendo = document.getElementById("txtDividendo").value;
+        let promesa = new Promise(function (resolve, reject) {
+          if (parseInt(divisor) == 0) {
+            setTimeout(reject("No se permite la division sobre 0"), 3000);
+          } else {
+            setTimeout(resolve("Resultado " + dividendo / divisor), 3000);
+          }
+        });
+        promesa.then(
+          (result) => alert(result),
+          (error) => alert(error)
+        );
+      });
+    </script>
+  </body>
+</html>

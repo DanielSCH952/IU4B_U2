@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Estilos.css" />
+  </head>
+  <body>
+    <div>
+      <label for="txtPromesaResolve">Promesa Resulta</label>
+      <input type="text" id="txtPromesaResolve" />
+      <button id="btnResolve">Ejecutar Resolve</button>
+      <hr />
+      <label for="txtPromesaReject">Promesa Rechazada</label>
+      <input type="text" id="txtPromesaReject" />
+      <button id="btnReject">Ejecutar Reject</button>
+    </div>
+
+    <script>
+      const txtPromesaResolve = document.getElementById("txtPromesaResolve");
+      const txtPromesaReject = document.getElementById("txtPromesaReject");
+      const btnReject = document.getElementById("btnReject");
+      const btnResolve = document.getElementById("btnResolve");
+      btnReject.addEventListener("click", () => {
+        let promesaReject = new Promise(function (resolve, reject) {
+          setTimeout(() => reject("Accion Reject"), 3000);
+        });
+        promesaReject.then(
+          (result) => (txtPromesaResolve.value = result),
+          (error) => (txtPromesaReject.value = "Error " + error)
+        );
+      });
+      btnResolve.addEventListener("click", () => {
+        promesaResolve.then(
+          (result) => (txtPromesaResolve.value = result),
+          (error) => (txtPromesaReject.value = "Error " + error)
+        );
+      });
+    </script>
+  </body>
+</html>
