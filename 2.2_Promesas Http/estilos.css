@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 80vh;
+  background-color: aqua;
+  flex-flow: row wrap;
+  gap:25px;
+  margin: 10px;
+}
+.btn{
+   background-color: rgb(76, 106, 224); 
+   color: white;
+   height: 30px;
+   border-radius: 10px;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    background-color: #b18ece;
+    padding: 10px;
+    border: 1px black;
+    border-style: double;
+}
