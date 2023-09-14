@@ -140,7 +140,7 @@ body {
   align-items: center;
   flex-flow: row wrap;
   margin: 15px;
-  gap: 50px;
+  gap: 40px;
   .sideMain {
     background-color: rgba(237, 224, 129, 0.624);
     width: 30%;
