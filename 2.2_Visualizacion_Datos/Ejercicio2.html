@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos2.css" />
+  </head>
+  <body onload="activarFunciones();">
+    <div class="contenedorAside">
+      <div class="sideMain">
+        <h2>Clasificaciones</h2>
+        <div class="input-container">
+          <input
+            type="text"
+            class="input"
+            id="txtClasificacion"
+            placeholder=" "
+          />
+          <label class="label" for="txtClasificacion">Clasificacion</label>
+        </div>
+        <div class="input-container">
+          <label for="color">Color: </label>
+          <input
+            type="color"
+            id="color"
+            class="input-color"
+            onchange="cambiarColor()"
+          />
+        </div>
+        <button id="btnAgregarClf" class="btn">Agregar clasificacion</button>
+      </div>
+      <div class="sideMain">
+        <h2>Columnas</h2>
+        <div class="input-container">
+          <input type="text" class="input" id="newColumn" placeholder=" " />
+          <label class="label" for="newColumn">Columna</label>
+        </div>
+        <button id="btnAgregarClm" class="btn">Agregar columna</button>
+      </div>
+      <div class="side">
+        <h2>Editar valores</h2>
+        <label for="selectClasificacion1">Clasificaciones</label>
+        <select
+          class="custom-select2"
+          id="selectClasificacion1"
+          onchange="llenarNum()"
+        >
+          <option value="">Seleccione</option>
+        </select>
+        <label for="customslt">Columnas</label>
+        <select
+          class="custom-select2"
+          id="selectColumns"
+          onchange="llenarNum();"
+        >
+          <option value="">Seleccione</option>
+        </select>
+
+        <label for="numb">Valor</label>
+        <input
+          type="number"
+          class="input-new"
+          id="numb"
+          value="0"
+          min="0"
+          max="5000"
+        />
+        <button id="btnUpdate" class="btn">Modificar</button>
+      </div>
+    </div>
+    <div class="contenedor">
+      <canvas id="chart" width="600" height="600"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="Ejercicio2.js"></script>
+  </body>
+</html>
