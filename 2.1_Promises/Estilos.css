@@ -1,0 +1,9 @@
+.btn1 {
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #46a0e0;
+  color: black;
+  font: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

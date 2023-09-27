@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+body{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#map{
+    width: 600px;
+    height: 400px;
+}

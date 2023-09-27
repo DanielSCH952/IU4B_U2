@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+}
+body{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#map{
+    width: 600px;
+    height: 400px;
+}
+.container {
+    width: 80vw;
+    height: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #002e34;
+    border: 1px solid #002e34;
+    border-radius: 9px;
+  
+    .aside {
+      width: 35%;
+      height: 90%;
+      background-color: #004443;
+      border: 1px solid #004443f6;
+      border-radius: 9px;
+      margin: 5px;
+      margin-top: 10px;
+  
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      .lista {
+        width: 60%;
+        height: 80%;
+        background-color: #00755c;
+        margin: 10px;
+        margin-top: 30px;
+        padding: 10px;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: row wrap;
+        gap: 15px;
+        overflow-y: auto;
+        .imagen-x {
+          width: 75%;
+          height: 30%;
+          background-color: rgb(55, 10, 132);
+          border-radius: 10px;
+          padding: 8px;
+          display: flex;
+          justify-content: center;
+          flex-flow: row wrap;
+          .labels {
+            width: 70%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #ffffff;
+            font-weight: bold;
+            flex-direction: column;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+              sans-serif;
+          }
+          .curve-img {
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+          }
+        }
+        .imagen-y {
+          width: 75%;
+          height: 30%;
+          background-color: rgb(222, 44, 180);
+          border-radius: 10px;
+          padding: 8px;
+          display: flex;
+          justify-content: center;
+          flex-flow: row wrap;
+          .labels {
+            width: 70%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #ffffff;
+            font-weight: bold;
+            flex-direction: column;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+              sans-serif;
+          }
+          .curve-img {
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .btn {
+        width: 90%;
+        height: 40px;
+        margin: 10px;
+        background-color: #90ff17;
+        border-radius: 9px;
+        border: none;
+        color: #002e34;
+        font-size: 15px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+    }
+    .contCanva {
+      width: 50%;
+      height: 60%;
+      background-color: #f0eee0;
+      border-radius: 9px;
+      margin-top: 10px;
+      display: flex;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      canvas {
+        width: 90%;
+        height: 50%;
+      }
+    }
+  }
