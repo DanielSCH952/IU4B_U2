@@ -2,32 +2,61 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="text-center mb-3">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <button type="button" class="btn btn-primary position-relative">
+        Profile
+        <span id="show" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+            <span class="visually-hidden">unread messages</span>
+        </span>
+    </button>
 </div>
 <input type="text" id="txt" placeholder="Ingresa mensaje">
 <button id="btnSendMsg" class="btn btn-primary"> Send Message</button>
-    <ul id="contenedor">
-    </ul>
+<button id="btnNotification" class="btn btn-success"> Send Notification</button>
+<ul id="contenedor">
+</ul>
 <script src="~/js/signalr.js"></script>
 <script>
     const btnSendM = document.getElementById("btnSendMsg");
+    const btnNotifi = document.getElementById("btnNotification");
     const contenedor = document.getElementById("contenedor");
+    const pill = document.getElementById("show");
     const txt = document.getElementById("txt");
+    let cont = 0;
+
     const conexion = new signalR.HubConnectionBuilder().withUrl("/WebSocketServer").build();
     conexion.start().then(() => {
         console.log("Conexion exitosa");
     }).catch((e) => {
         console.log("Error al conectarse al servidor de websockets");
     });
-
-    conexion.on("EnviarMensajeTodos",(msj)=>{
+    conexion.on("EnviarMensajeTodos", (msj) => {
         let li = document.createElement("li");
         li.textContent = msj;
         contenedor.appendChild(li);
     });
+    conexion.on("UsuarioConectado", (connectionId) => {
+        let li = document.createElement("li");
+        li.textContent = `Usuario Conectado - Id: ${connectionId}`;
+        contenedor.appendChild(li);
+    });
+    conexion.on("UsuarioDesconectado", (connectionId) => {
+        let li = document.createElement("li");
+        li.textContent = `Usuario Desconectado - Id: ${connectionId}`;
+        contenedor.appendChild(li);
+    });
+    conexion.on("Notify", () => {
+        cont++;
+        pill.textContent = `${cont}`;
+    });
     btnSendM.addEventListener("click", () => {
-        conexion.invoke("EnviarMensaje",txt.value);
+        conexion.invoke("EnviarMensaje", txt.value);
+    });
+    btnNotifi.addEventListener("click", () => {
+        conexion.invoke("SendNotify");
     });
 </script>
